@@ -1,0 +1,30 @@
+﻿@model Staff
+
+<form asp-controller="Staff" asp-action="Create" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FirstName"></label>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <input type="text" asp-for="FirstName" class="form-control" placeholder="FirstName">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="LastName"></label>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+            <input type="text" asp-for="LastName" class="form-control" placeholder="LastName">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Email">Email</label>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input type="email" asp-for="Email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Department"></label>
+            <select asp-for="Department" asp-items="Html.GetEnumSelectList<Department>()">
+                <option value="">Please select</option>
+            </select>
+            <span asp-validation-for="Department" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

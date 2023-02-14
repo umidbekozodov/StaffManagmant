@@ -1,0 +1,23 @@
+@model HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Index";
+}
+
+<div class="card-deck d-flex">
+    @foreach (var staff in Model.Staffs)
+    {
+        <div class="card m-3">
+            <div class="card-header text-center">
+                <h3>@staff.FirstName @staff.LastName</h3>
+            </div>
+            <img class="card-img-top" src="~/images/b02.jpg" />
+            <div class="card-footer text-center">
+                <a asp-controller="staff" asp-action="details" asp-route-id="@staff.Id" class="btn btn-primary m-1">View</a>
+                <a href="#" class="btn btn-primary m-1">Edit</a>
+                <a href="#" class="btn btn-danger m-1">Delete</a>
+            </div>
+
+        </div>
+    }
+</div>
